@@ -1,0 +1,85 @@
+/* Custom styles to hide navigation bar except on admin page */
+
+/* Hide entire header/top bar on all pages */
+header,
+.header,
+[role="banner"],
+nav {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+/* Show header only on admin page */
+body[data-path="/admin"] header,
+body[data-path="/admin"] .header,
+body[data-path="/admin"] [role="banner"],
+body[data-path="/admin"] nav {
+  display: flex !important;
+  visibility: visible !important;
+  height: auto !important;
+}
+
+/* Ensure proper theme color throughout the app */
+:root {
+  --primary-color: #0073e6;
+  --primary-text-color: white;
+}
+
+/* Fix any header buttons to ensure white text */
+header button, 
+header .btn,
+header [role="button"] {
+  background-color: var(--primary-color) !important;
+  color: var(--primary-text-color) !important;
+}
+
+/* Update all button and link colors to match #0073e6 */
+button, 
+.btn,
+.button,
+a.btn,
+[role="button"],
+[type="button"],
+[type="submit"] {
+  background-color: #0073e6 !important;
+  border-color: #0073e6 !important;
+  color: white !important; /* Ensure text on blue background is white */
+}
+
+/* Button text and icons should always be white */
+button *, 
+.btn *,
+.button *,
+a.btn *,
+[role="button"] *,
+[type="button"] *,
+[type="submit"] * {
+  color: white !important;
+}
+
+a:not(.btn), .link {
+  color: #0073e6 !important;
+}
+
+/* Override any primary color classes */
+.bg-primary,
+.text-primary-foreground {
+  background-color: #0073e6 !important;
+  color: white !important;
+}
+
+.text-primary {
+  color: #0073e6 !important;
+}
+
+/* Additional style enhancements */
+.tour-card:hover {
+  border-color: #0073e6 !important;
+  box-shadow: 0 0 10px rgba(0, 115, 230, 0.3) !important;
+}
+
+/* Blue focus rings */
+*:focus {
+  outline-color: #0073e6 !important;
+}

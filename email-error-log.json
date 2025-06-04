@@ -1,0 +1,6 @@
+{
+  "timestamp": "2025-05-27T08:32:33.785Z",
+  "success": false,
+  "error": "nodemailer.createTransporter is not a function",
+  "stack": "TypeError: nodemailer.createTransporter is not a function\n    at testEmailConfiguration (/home/depaeezj/trips/debug-email.js:35:36)\n    at Object.<anonymous> (/home/depaeezj/trips/debug-email.js:132:1)\n    at Module._compile (node:internal/modules/cjs/loader:1364:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)\n    at Module.load (node:internal/modules/cjs/loader:1203:32)\n    at Module._load (node:internal/modules/cjs/loader:1019:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)\n    at node:internal/main/run_main_module:28:49"
+}

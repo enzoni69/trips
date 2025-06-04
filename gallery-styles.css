@@ -1,0 +1,263 @@
+
+/* Gallery Enhancement Styles */
+
+/* Make tour card images larger and more mobile-friendly */
+.tour-card img,
+[class*="tour"] img,
+[class*="gallery"] img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.tour-card img:hover,
+[class*="tour"] img:hover,
+[class*="gallery"] img:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+  cursor: pointer !important;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  /* Make tour cards stack vertically on mobile */
+  [class*="grid"][class*="cols-2"],
+  [class*="grid"][class*="cols-3"],
+  [class*="grid"][class*="cols-4"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Make images larger on mobile */
+  .tour-card img,
+  [class*="gallery"] img {
+    min-height: 200px !important;
+    object-fit: cover !important;
+  }
+  
+  /* Ensure tour cards are full width on mobile */
+  .tour-card {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  /* Private tour selection - stack vertically */
+  [class*="private"] .tour-card {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Gallery specific enhancements */
+[data-value="gallery"] img,
+.gallery img,
+[class*="gallery"] img {
+  cursor: pointer !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+[data-value="gallery"] img:hover,
+.gallery img:hover,
+[class*="gallery"] img:hover {
+  transform: scale(1.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Lightbox button hover effects */
+.lightbox-prev:hover,
+.lightbox-next:hover,
+.lightbox-close:hover {
+  background: white !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+/* Lightbox button hover effects */
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 1) !important;
+  transform: scale(1.1) !important;
+}
+
+/* Touch-friendly buttons on mobile */
+@media (max-width: 768px) {
+  .lightbox-prev,
+  .lightbox-next {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 16px !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-radius: 6px !important;
+    opacity: 0.8 !important;
+  }
+  
+  .lightbox-prev {
+    left: 10px !important;
+  }
+  
+  .lightbox-next {
+    right: 10px !important;
+  }
+  
+  .lightbox-close {
+    top: 10px !important;
+    right: 10px !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 6px !important;
+    opacity: 0.9 !important;
+  }
+  
+  .lightbox-counter {
+    bottom: 15px !important;
+    font-size: 14px !important;
+    padding: 8px 16px !important;
+  }
+  
+  /* Ensure buttons don't interfere with swipe gestures */
+  .lightbox-prev,
+  .lightbox-next,
+  .lightbox-close {
+    touch-action: manipulation !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+  }
+  
+  /* Improve button hover/active states on mobile */
+  .lightbox-prev:active,
+  .lightbox-next:active {
+    background: rgba(255, 255, 255, 0.9) !important;
+    transform: translateY(-50%) scale(0.95) !important;
+  }
+  
+  .lightbox-close:active {
+    background: rgba(255, 255, 255, 1) !important;
+    transform: scale(0.95) !important;
+  }
+}
+
+/* Make gallery grid more responsive and ensure all images are accessible */
+@media (max-width: 480px) {
+  [class*="grid-cols-2"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  [class*="grid-cols-3"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  [class*="grid-cols-4"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* Ensure ALL tour images are properly enhanced */
+.tour-card img,
+[role="tabpanel"] img,
+[data-value="gallery"] img,
+[class*="grid"] img,
+[class*="aspect-"] img {
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  border: 2px solid transparent !important;
+  touch-action: manipulation !important;
+}
+
+.tour-card img:hover,
+[role="tabpanel"] img:hover,
+[data-value="gallery"] img:hover,
+[class*="grid"] img:hover,
+[class*="aspect-"] img:hover {
+  transform: scale(1.02) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Mobile tap feedback for all tour images */
+@media (max-width: 768px) {
+  .tour-card img:active,
+  [role="tabpanel"] img:active,
+  [data-value="gallery"] img:active,
+  [class*="grid"] img:active,
+  [class*="aspect-"] img:active {
+    transform: scale(0.98) !important;
+    opacity: 0.8 !important;
+  }
+}
+
+/* Specific improvements for group tour gallery */
+[role="tabpanel"][aria-labelledby*="gallery"] img,
+.tour-card [role="tabpanel"] img {
+  min-height: 120px !important;
+  object-fit: cover !important;
+}
+
+/* Ensure all image containers allow interaction */
+[class*="aspect-video"],
+[class*="aspect-square"],
+[class*="overflow-hidden"] {
+  position: relative !important;
+}
+
+[class*="aspect-video"] img,
+[class*="aspect-square"] img,
+[class*="overflow-hidden"] img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  cursor: pointer !important;
+}
+
+/* Improve aspect ratios for better viewing */
+.tour-card [class*="aspect-video"],
+[class*="gallery"] [class*="aspect-video"] {
+  aspect-ratio: 16/10 !important;
+}
+
+@media (max-width: 768px) {
+  .tour-card [class*="aspect-video"],
+  [class*="gallery"] [class*="aspect-video"] {
+    aspect-ratio: 4/3 !important;
+  }
+}
+
+/* Improve image clickability feedback */
+img[data-gallery-enhanced="true"] {
+  transition: all 0.2s ease !important;
+  border: 2px solid transparent !important;
+}
+
+img[data-gallery-enhanced="true"]:hover {
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Mobile-specific image enhancements */
+@media (max-width: 768px) {
+  img[data-gallery-enhanced="true"]:active {
+    transform: scale(0.98) !important;
+    opacity: 0.8 !important;
+  }
+}
+
+/* Ensure proper positioning context */
+.tour-card,
+[class*="gallery"],
+[data-value="gallery"],
+[role="tabpanel"] {
+  position: relative;
+}
+
+/* Prevent text selection on clickable images */
+img[data-gallery-enhanced="true"] {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
